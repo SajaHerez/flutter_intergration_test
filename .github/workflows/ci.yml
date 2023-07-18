@@ -19,10 +19,19 @@ jobs:
           channel: "stable"
       - run: flutter pub get
       - run: flutter analyze
-      - run: |
-         export DISPLAY=:99
-         sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
-         flutter test -d linux integration_test
+      - name: Install Android SDK
+        uses: malinskiy/action-android/install-sdk@release/0.1.2 
+      - run: echo $ANDROID_HOME
+      - run: sdkmanager --install "ndk;23.1.7779620"
+      - run: sdkmanager --install "build-tools;30.0.3"
+      - run: flutter pub get
+      - uses: malinskiy/action-android/emulator-run-cmd@release/0.1.2
+        with:
+          cmd: flutter test integration_test
+          api: 31
+          cmdOptions: -no-snapshot-save -noaudio -no-boot-anim -cores 2 -memory 3072 -no-window
+          tag: google_apis
+          abi: x86_64
 
   build_ios:
     name: Build Flutter (iOS)
