@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -16,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
       // Simulate successful login
       String username = _usernameController.text;
       String password = _passwordController.text;
-      print('Username: $username, Password: $password');
+   //   print('Username: $username, Password: $password');
 
       // Navigate to the home page
       Navigator.pushReplacement(
