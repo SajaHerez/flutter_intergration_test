@@ -27,7 +27,7 @@ jobs:
       - run: flutter pub get
       - uses: malinskiy/action-android/emulator-run-cmd@release/0.1.2
         with:
-          cmd: flutter test integration_test
+          cmd: flutter test integration_test/ d emulator-5554
           api: 31
           cmdOptions: -no-snapshot-save -noaudio -no-boot-anim -cores 2 -memory 3072 -no-window
           tag: google_apis
