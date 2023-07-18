@@ -8,6 +8,6 @@ void main() {
       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       useMaterial3: true,
     ),
-    home: LoginScreen(),
+    home: const LoginScreen(),
   ));
 }

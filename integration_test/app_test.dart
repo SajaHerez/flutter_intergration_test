@@ -9,7 +9,7 @@ void main() {
     testWidgets('Successful Login Navigates To Home Page',
         (WidgetTester tester) async {
       // Build our app and trigger a frame.
-      await tester.pumpWidget(MaterialApp(home: LoginScreen()));
+      await tester.pumpWidget(const MaterialApp(home: LoginScreen()));
       // Enter valid credentials into the login form.
       await tester.enterText(
           find.byKey(const Key('usernameField')), 'valid_username');
@@ -30,7 +30,7 @@ void main() {
 
     testWidgets('Failed Login Invalid Password', (WidgetTester tester) async {
       // Build our app and trigger a frame.
-      await tester.pumpWidget(MaterialApp(home: LoginScreen()));
+      await tester.pumpWidget(const MaterialApp(home: LoginScreen()));
       // Enter valid credentials into the login form.
       final passwordField = find.byKey(const Key('passwordField'));
       await tester.enterText(
@@ -60,7 +60,7 @@ void main() {
 
 
     testWidgets('Failed Login Invalid Username', (tester) async {
-      await tester.pumpWidget(MaterialApp(home: LoginScreen()));
+      await tester.pumpWidget(const MaterialApp(home: LoginScreen()));
 
       final userNameFinder = find.byKey(const Key('usernameField'));
 

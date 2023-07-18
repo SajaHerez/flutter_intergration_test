@@ -5,25 +5,25 @@ class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  LoginScreenState createState() => LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class LoginScreenState extends State<LoginScreen> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   _login() {
     if (_formKey.currentState?.validate() ?? false) {
-      // Simulate successful login
-      String username = _usernameController.text;
-      String password = _passwordController.text;
-   //   print('Username: $username, Password: $password');
+      // // Simulate successful login
+      // String username = _usernameController.text;
+      // String password = _passwordController.text;
+      //   print('Username: $username, Password: $password');
 
       // Navigate to the home page
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
     }
   }
