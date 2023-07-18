@@ -19,7 +19,7 @@ jobs:
           channel: "stable"
       - run: flutter pub get
       - run: flutter analyze
-      - run: flutter test integration_test/app_test.dart
+      - run: flutter test integration_test/
 
   build_ios:
     name: Build Flutter (iOS)
